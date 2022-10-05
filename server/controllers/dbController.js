@@ -4,8 +4,28 @@ require('dotenv').config();
 const dbController = {};
 
 dbController.getPlayerStatsByGameId = (req, res, next) => {
-  console.log(req);
-  // return next();
+  const { gameId } = req.params;
+
+  const query = `
+  SELECT *
+  FROM player_stats_by_game
+  WHERE game_id = $1;
+  `;
+
+  db.query(query, [gameId], (error, response) => {
+    if (error) {
+      return next({
+        log: `dbController.getPlayerStatsByGameId: ERROR: ${typeof error === 'object' ? JSON.stringify(error) : error}`,
+        message: { error: 'Error occurred in dbController.getPlayerStatsByGameId. Check server logs for more details.' },
+      });
+    }
+    if (!response.rows.length) return next({
+      log: `dbController.getPlayerStatsByGameId: ERROR: No game found`,
+      message: { error: 'Error occurred in dbController.getPlayerStatsByGameId. No game found.' }
+    });
+    res.locals.data = response.rows;
+    return next();
+  });
 };
 
 /**
