@@ -4,7 +4,8 @@ require('dotenv').config();
 const dbController = {};
 
 dbController.getPlayerStatsByGameId = (req, res, next) => {
-
+  console.log(req);
+  // return next();
 };
 
 /**

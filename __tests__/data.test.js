@@ -1,9 +1,9 @@
-const data = require('../server/lib/data');
+const dataTransform = require('../server/lib/data');
 const liveFeedData = require('./feedLiveResponse');
 
 describe('--Transform Data Methods--', () => {
   describe('--getPlayerStats--', () => {
-    beforeAll(() => result = data.getPlayerStats(liveFeedData));
+    beforeAll(() => result = dataTransform.getPlayerStats(liveFeedData));
     it('Should return an array', () => {
       expect(Array.isArray(result)).toBe(true);
     });
@@ -22,13 +22,13 @@ describe('--Transform Data Methods--', () => {
     });
   });
   describe('--getStatus--', () => {
-    beforeAll(() => result = data.getStatus(liveFeedData));
+    beforeAll(() => result = dataTransform.getStatus(liveFeedData));
     it('Should return expected object shape', () => {
       expect(Object.keys(result)).toEqual(['gamePk', 'abstractGameState', 'codedGameState', 'detailedState', 'statusCode', 'startTimeTBD']);
     });
   });
   describe('--getPlayerInfo--', () => {
-    beforeAll(() => result = data.getPlayerInfo(liveFeedData));
+    beforeAll(() => result = dataTransform.getPlayerInfo(liveFeedData));
     it('Should return an array', () => {
       expect(Array.isArray(result)).toBe(true);
     });

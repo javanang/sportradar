@@ -1,6 +1,6 @@
-const data = {};
+const dataTransform = {};
 
-data.getPlayerStats = (data) => {
+dataTransform.getPlayerStats = (data) => {
   const homePlayers = data.liveData.boxscore.teams.home.players;
   const awayPlayers = data.liveData.boxscore.teams.away.players;
   const playerStats = [];
@@ -34,7 +34,7 @@ data.getPlayerStats = (data) => {
   return playerStats;
 };
 
-data.getStatus = (data) => {
+dataTransform.getStatus = (data) => {
   return {
     gamePk: data.gamePk,
     abstractGameState: data.gameData.status.abstractGameState,
@@ -45,7 +45,7 @@ data.getStatus = (data) => {
   };
 };
 
-data.getPlayerInfo = (data) => {
+dataTransform.getPlayerInfo = (data) => {
   const { players } = data.gameData;
   allPlayers = [];
   for (player in players) {
@@ -63,4 +63,4 @@ data.getPlayerInfo = (data) => {
   return allPlayers;
 };
 
-module.exports = data;
+module.exports = dataTransform;
