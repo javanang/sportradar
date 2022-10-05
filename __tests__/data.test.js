@@ -12,12 +12,20 @@ describe('--Transform Data Methods--', () => {
     });
     it('Should have an object with expected keys', () => {
       expect(Object.keys(result[0])).toEqual([
-        'id',
         'assists',
         'goals',
         'hits',
         'points',
-        'penaltyMinutes'
+        'penaltyMinutes',
+        'id'
+      ]);
+      expect(Object.keys(result[result.length - 1])).toEqual([
+        'assists',
+        'goals',
+        'hits',
+        'points',
+        'penaltyMinutes',
+        'id'
       ]);
     });
   });

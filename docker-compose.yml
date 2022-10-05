@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=dbuser
+      - POSTGRES_USER=dbuser
+      - POSTGRES_DB=stats
+
+volumes:
+  pgdata:

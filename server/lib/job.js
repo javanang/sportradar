@@ -3,6 +3,7 @@ const api = require('./api');
 const path = require('path');
 const dataTransform = require('./data');
 const fs = require('fs');
+const dbController = require('../controllers/dbController');
 const jobRunner = {};
 
 jobRunner.runDailyJob = () => {
@@ -20,20 +21,30 @@ jobRunner.scheduleGames = async () => {
     const job = schedule.scheduleJob(gameTime, () => {
       jobRunner.getRefreshedStats(game.gamePk);
     });
-    if (job) scheduledJobs.push({date: job.pendingInvocations[0].fireDate, gamePk: game.gamePk});
+    if (job) scheduledJobs.push({ date: job.pendingInvocations[0].fireDate, gamePk: game.gamePk });
   });
   fs.writeFileSync(path.resolve(__dirname + '/../models/scheduledJobs.json'), JSON.stringify(scheduledJobs));
 };
 
-jobRunner.getRefreshedStats = (gamePk) => {
-  // TODO: write once to the DB with player info
-  // intervalId = setInterval(async () => {
-  //   const data = await api.getPlayerStats(gamePk);
-  //   const status = dataTransform.getStatus(data);
-  //   const playerStats = dataTransform.getRefreshedStats(data);
-  //   // TODO: update DB with player stats injest.updatePlayerStats(playerStats);
-  //   if (status.statusCode === '6') clearInterval(intervalId);
-  // }, 60000);
+jobRunner.getRefreshedStats = async (gamePk) => {
+  try {
+    const data = await api.getLiveFeed(gamePk);
+    const playerInfo = dataTransform.getPlayerInfo(data);
+    const response = await dbController.setPlayerInfo(playerInfo);
+  } catch (error) {
+    console.log('jobRunner.getRefreshedStats: ', error);
+  };
+  intervalId = setInterval(async () => {
+    try {
+      const data = await api.getLiveFeed(gamePk);
+      const status = dataTransform.getStatus(data);
+      const playerStats = dataTransform.getPlayerStats(data);
+      const response = dbController.updatePlayerStats(playerStats);
+      if (status.statusCode === '6') clearInterval(intervalId);
+    } catch (error) {
+      console.log('jobRunner.getRefreshedStats setInterval: ', error);
+    };
+  }, 60000);
 };
 
 module.exports = jobRunner;
