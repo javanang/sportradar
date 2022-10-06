@@ -4,7 +4,7 @@ const dailyScheduleData = require('./dailySchedule');
 const api = require('../server/lib/api');
 
 jest.mock('axios');
-// mockAxios.getLiveFeed.mockResolvedValue({ data: liveFeedData });
+//TODO: Test if error gets thrown 
 
 describe('--NHL API methods--', () => {
   describe('--getDailySchedule--', () => {
