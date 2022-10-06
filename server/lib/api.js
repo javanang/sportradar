@@ -11,7 +11,7 @@ api.getDailySchedule = () => {
 };
 
 api.getLiveFeed = (gameId) => {
-  const gameFeedURL = `game/${gameID}/feed/live`;
+  const gameFeedURL = `game/${gameId}/feed/live`;
   return axios
     .get(api.baseURL + gameFeedURL)
     .then(response => response.data)

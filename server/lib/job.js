@@ -6,6 +6,7 @@ const fs = require('fs');
 const dbController = require('../controllers/dbController');
 const jobRunner = {};
 
+// Daily job to pull from scheduleAPI and schedule games. Runs at 2AM CT daily
 jobRunner.runDailyJob = () => {
   const job = schedule.scheduleJob('0 2 * * *', () => {
     console.log('Pulled daily schedule from API');
@@ -13,6 +14,7 @@ jobRunner.runDailyJob = () => {
   });
 };
 
+// Schedule individual jobs for each game using response from nhl API /schedule endpoint
 jobRunner.scheduleGames = async () => {
   const dailySchedule = await api.getDailySchedule();
   const scheduledJobs = [];
@@ -34,7 +36,7 @@ jobRunner.getRefreshedStats = async (gamePk) => {
   } catch (error) {
     console.log('jobRunner.getRefreshedStats: ', error);
   };
-  intervalId = setInterval(async () => {
+  intervalId = setInterval(async (gamePk) => {
     try {
       const data = await api.getLiveFeed(gamePk);
       const status = dataTransform.getStatus(data);
@@ -44,7 +46,7 @@ jobRunner.getRefreshedStats = async (gamePk) => {
     } catch (error) {
       console.log('jobRunner.getRefreshedStats setInterval: ', error);
     };
-  }, 60000);
+  }, 6000, gamePk);
 };
 
 module.exports = jobRunner;

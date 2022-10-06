@@ -5,9 +5,6 @@ const router = require('./routes/root');
 const app = express();
 const PORT = 3000;
 
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-
 app.use('/', router);
 
 app.use('*', (req, res) => res.status(404).send('Route not found'));
@@ -23,6 +20,7 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
+// Start job when server starts 
 jobRunner.scheduleGames();
 
 app.listen(PORT, () => console.log(`Server is listening at port ${PORT}`));
