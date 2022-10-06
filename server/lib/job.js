@@ -46,7 +46,7 @@ jobRunner.getRefreshedStats = async (gamePk) => {
     } catch (error) {
       console.log('jobRunner.getRefreshedStats setInterval: ', error);
     };
-  }, 6000, gamePk);
+  }, 60000, gamePk);
 };
 
 module.exports = jobRunner;
