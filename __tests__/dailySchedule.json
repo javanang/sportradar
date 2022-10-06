@@ -1,0 +1,273 @@
+{
+  "copyright": "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
+  "totalItems": 5,
+  "totalEvents": 0,
+  "totalGames": 5,
+  "totalMatches": 0,
+  "metaData": {
+      "timeStamp": "20221006_005946"
+  },
+  "wait": 10,
+  "dates": [
+      {
+          "date": "2022-10-05",
+          "totalItems": 5,
+          "totalEvents": 0,
+          "totalGames": 5,
+          "totalMatches": 0,
+          "games": [
+              {
+                  "gamePk": 2022010081,
+                  "link": "/api/v1/game/2022010081/feed/live",
+                  "gameType": "PR",
+                  "season": "20222023",
+                  "gameDate": "2022-10-05T23:00:00Z",
+                  "status": {
+                      "abstractGameState": "Live",
+                      "codedGameState": "3",
+                      "detailedState": "In Progress",
+                      "statusCode": "3",
+                      "startTimeTBD": false
+                  },
+                  "teams": {
+                      "away": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 4,
+                          "team": {
+                              "id": 6,
+                              "name": "Boston Bruins",
+                              "link": "/api/v1/teams/6"
+                          }
+                      },
+                      "home": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 3,
+                          "team": {
+                              "id": 3,
+                              "name": "New York Rangers",
+                              "link": "/api/v1/teams/3"
+                          }
+                      }
+                  },
+                  "venue": {
+                      "id": 5054,
+                      "name": "Madison Square Garden",
+                      "link": "/api/v1/venues/5054"
+                  },
+                  "content": {
+                      "link": "/api/v1/game/2022010081/content"
+                  }
+              },
+              {
+                  "gamePk": 2022010082,
+                  "link": "/api/v1/game/2022010082/feed/live",
+                  "gameType": "PR",
+                  "season": "20222023",
+                  "gameDate": "2022-10-05T23:00:00Z",
+                  "status": {
+                      "abstractGameState": "Live",
+                      "codedGameState": "3",
+                      "detailedState": "In Progress",
+                      "statusCode": "3",
+                      "startTimeTBD": false
+                  },
+                  "teams": {
+                      "away": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 2,
+                          "team": {
+                              "id": 17,
+                              "name": "Detroit Red Wings",
+                              "link": "/api/v1/teams/17"
+                          }
+                      },
+                      "home": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 2,
+                          "team": {
+                              "id": 15,
+                              "name": "Washington Capitals",
+                              "link": "/api/v1/teams/15"
+                          }
+                      }
+                  },
+                  "venue": {
+                      "id": 5094,
+                      "name": "Capital One Arena",
+                      "link": "/api/v1/venues/5094"
+                  },
+                  "content": {
+                      "link": "/api/v1/game/2022010082/content"
+                  }
+              },
+              {
+                  "gamePk": 2022010083,
+                  "link": "/api/v1/game/2022010083/feed/live",
+                  "gameType": "PR",
+                  "season": "20222023",
+                  "gameDate": "2022-10-06T00:00:00Z",
+                  "status": {
+                      "abstractGameState": "Live",
+                      "codedGameState": "3",
+                      "detailedState": "In Progress",
+                      "statusCode": "3",
+                      "startTimeTBD": false
+                  },
+                  "teams": {
+                      "away": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 0,
+                          "team": {
+                              "id": 20,
+                              "name": "Calgary Flames",
+                              "link": "/api/v1/teams/20"
+                          }
+                      },
+                      "home": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 0,
+                          "team": {
+                              "id": 52,
+                              "name": "Winnipeg Jets",
+                              "link": "/api/v1/teams/52"
+                          }
+                      }
+                  },
+                  "venue": {
+                      "id": 5058,
+                      "name": "Canada Life Centre",
+                      "link": "/api/v1/venues/5058"
+                  },
+                  "content": {
+                      "link": "/api/v1/game/2022010083/content"
+                  }
+              },
+              {
+                  "gamePk": 2022010084,
+                  "link": "/api/v1/game/2022010084/feed/live",
+                  "gameType": "PR",
+                  "season": "20222023",
+                  "gameDate": "2022-10-06T01:30:00Z",
+                  "status": {
+                      "abstractGameState": "Preview",
+                      "codedGameState": "2",
+                      "detailedState": "Pre-Game",
+                      "statusCode": "2",
+                      "startTimeTBD": false
+                  },
+                  "teams": {
+                      "away": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 0,
+                          "team": {
+                              "id": 25,
+                              "name": "Dallas Stars",
+                              "link": "/api/v1/teams/25"
+                          }
+                      },
+                      "home": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 0,
+                          "team": {
+                              "id": 21,
+                              "name": "Colorado Avalanche",
+                              "link": "/api/v1/teams/21"
+                          }
+                      }
+                  },
+                  "venue": {
+                      "id": 5064,
+                      "name": "Ball Arena",
+                      "link": "/api/v1/venues/5064"
+                  },
+                  "content": {
+                      "link": "/api/v1/game/2022010084/content"
+                  }
+              },
+              {
+                  "gamePk": 2022010085,
+                  "link": "/api/v1/game/2022010085/feed/live",
+                  "gameType": "PR",
+                  "season": "20222023",
+                  "gameDate": "2022-10-06T02:00:00Z",
+                  "status": {
+                      "abstractGameState": "Preview",
+                      "codedGameState": "1",
+                      "detailedState": "Scheduled",
+                      "statusCode": "1",
+                      "startTimeTBD": false
+                  },
+                  "teams": {
+                      "away": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 0,
+                          "team": {
+                              "id": 22,
+                              "name": "Edmonton Oilers",
+                              "link": "/api/v1/teams/22"
+                          }
+                      },
+                      "home": {
+                          "leagueRecord": {
+                              "wins": 0,
+                              "losses": 0,
+                              "type": "league"
+                          },
+                          "score": 0,
+                          "team": {
+                              "id": 23,
+                              "name": "Vancouver Canucks",
+                              "link": "/api/v1/teams/23"
+                          }
+                      }
+                  },
+                  "venue": {
+                      "name": "Abbotsford Entertainment Centre",
+                      "link": "/api/v1/venues/null"
+                  },
+                  "content": {
+                      "link": "/api/v1/game/2022010085/content"
+                  }
+              }
+          ],
+          "events": [],
+          "matches": []
+      }
+  ]
+}

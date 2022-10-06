@@ -7,7 +7,7 @@ api.getDailySchedule = () => {
   return axios
     .get(api.baseURL + 'schedule')
     .then(response => response.data.dates[0].games)
-    .catch(error => console.log(error));
+    .catch(error => { throw error });
 };
 
 api.getLiveFeed = (gameId) => {
@@ -15,7 +15,7 @@ api.getLiveFeed = (gameId) => {
   return axios
     .get(api.baseURL + gameFeedURL)
     .then(response => response.data)
-    .catch(error => console.log(error));
+    .catch(error => { throw error });
 };
 
 module.exports = api;
